@@ -9,6 +9,8 @@ Welcome to the **Magic Buttons Gallery** – a vibrant collection of 9 beautiful
 
 This web project showcases various magical button styles built using **HTML**, **CSS**, and **JavaScript**. Each button responds with whimsical animations and interactions that make every click a delightful experience.
 
+<video src="preview.mp4" width="100%" autoplay loop muted playsinline></video>
+
 ## ✨ Buttons Included
 
 | Button Name         | Description                          |
@@ -29,5 +31,4 @@ This web project showcases various magical button styles built using **HTML**, *
 magic-buttons-gallery/
 ├── index.html        # Main HTML file (includes all buttons)
 ├── style.css         # Styling for buttons & layout
-├── script.js         # Button interactivity & animations
 └── README.md         # You're here!
