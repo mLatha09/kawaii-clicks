@@ -1,0 +1,511 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Quicksand:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            background-size: 100% 100%, 100% 100%, 100% 100%, 400% 400%;
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: rgb(248, 8, 152);
+            margin-bottom: 20px;
+            font-size: 3.5rem;
+            font-family: 'Fredoka One', cursive;
+            text-align: center;
+            position: relative;
+            
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            width: 100%;
+            z-index: 10;
+            position: relative;
+        }
+
+        .button-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .button-label {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        /* ---------- 1. Super Bouncy Button ---------- */
+        .bouncy-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #ffa8a8);
+            border: none;
+            border-radius: 50px;
+            padding: 20px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            min-width: 200px;
+        }
+
+        .bouncy-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .bouncy-btn:hover::before {
+            left: 100%;
+        }
+
+        .bouncy-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.6), inset 0 1px 0 rgba(255,255,255,0.4);
+            animation: bounce 0.8s ease-in-out;
+        }
+
+        .bouncy-btn:active {
+            transform: translateY(-2px) scale(0.98);
+            animation: squish 0.3s ease;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 60%, 100% { transform: translateY(-8px) scale(1.05); }
+            40% { transform: translateY(-18px) scale(1.08); }
+            80% { transform: translateY(-5px) scale(1.03); }
+        }
+
+        @keyframes squish {
+            0% { transform: scaleX(1) scaleY(1); }
+            50% { transform: scaleX(1.15) scaleY(0.85); }
+            100% { transform: scaleX(1) scaleY(1); }
+        }
+
+        
+        /* ---------- 2.Heart Button---------- */
+        .heart-btn {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #fad0c4);
+            border: none;
+            border-radius: 30px;
+            padding: 20px 50px 20px 60px;
+            color: #d63384;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(255, 154, 158, 0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+            min-width: 200px;
+        }
+
+        .heart-btn::before {
+            content: '♡';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .heart-btn:hover::before {
+            content: '♥';
+            color: #e91e63;
+            animation: heartbeat 0.8s ease-in-out infinite;
+            transform: translateY(-50%) scale(1.3);
+        }
+
+        .heart-btn:hover {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 15px 40px rgba(255, 154, 158, 0.6), inset 0 1px 0 rgba(255,255,255,0.6);
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: translateY(-50%) scale(1.3); }
+            50% { transform: translateY(-50%) scale(1.5); }
+        }
+
+        /* 2.Rainbow Button */
+        .rainbow-btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #fab1a0, #fd79a8);
+            background-size: 400% 400%;
+            border: none;
+            border-radius: 35px;
+            padding: 20px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.3);
+            animation: gradientShift 4s ease infinite;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            min-width: 200px;
+        }
+
+        .rainbow-btn:hover {
+            transform: translateY(-5px) rotate(3deg) scale(1.05);
+            animation: gradientShift 0.8s ease infinite, wiggle 0.6s ease-in-out infinite;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: translateY(-5px) rotate(3deg) scale(1.05); }
+            25% { transform: translateY(-5px) rotate(-3deg) scale(1.05); }
+            75% { transform: translateY(-5px) rotate(3deg) scale(1.05); }
+        }
+
+        /* 4. Star Button */
+        .star-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2, #8b5a9b);
+            border: none;
+            border-radius: 25px;
+            padding: 20px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+            min-width: 200px;
+        }
+
+        .star-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.2) 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 2px, transparent 2px),
+                radial-gradient(circle at 40% 40%, rgba(255,255,255,0.3) 1px, transparent 1px);
+            background-size: 50px 50px, 70px 70px, 30px 30px;
+            transform: scale(0) rotate(0deg);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .star-btn:hover::before {
+            transform: scale(1) rotate(360deg);
+        }
+
+        .star-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.6), inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+
+        /* 5.Bubble Button */
+        .bubble-btn {
+            background: linear-gradient(135deg, #4facfe, #00f2fe, #43e97b);
+            border: none;
+            border-radius: 50px;
+            padding: 20px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+            min-width: 200px;
+        }
+
+        .bubble-btn::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 70%, transparent 100%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .bubble-btn:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+
+        .bubble-btn:hover {
+            transform: scale(1.08) rotate(-1deg);
+            box-shadow: 0 20px 50px rgba(79, 172, 254, 0.6), inset 0 1px 0 rgba(255,255,255,0.5);
+        }
+
+        /* 6.Glow Button */
+        .glow-btn {
+            background: linear-gradient(135deg, #a8edea, #fed6e3, #d299c2);
+            border: none;
+            border-radius: 30px;
+            padding: 20px 40px;
+            color: #333;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(168, 237, 234, 0.4), inset 0 1px 0 rgba(255,255,255,0.6);
+            min-width: 200px;
+        }
+
+        .glow-btn:hover {
+            box-shadow: 
+                0 0 30px rgba(168, 237, 234, 1),
+                0 0 60px rgba(254, 214, 227, 0.8),
+                0 0 90px rgba(168, 237, 234, 0.6),
+                0 20px 40px rgba(168, 237, 234, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 30px rgba(168, 237, 234, 1),
+                    0 0 60px rgba(254, 214, 227, 0.8),
+                    0 0 90px rgba(168, 237, 234, 0.6),
+                    0 20px 40px rgba(168, 237, 234, 0.4);
+            }
+            50% {
+                box-shadow: 
+                    0 0 50px rgba(168, 237, 234, 1),
+                    0 0 100px rgba(254, 214, 227, 1),
+                    0 0 150px rgba(168, 237, 234, 0.8),
+                    0 25px 50px rgba(168, 237, 234, 0.6);
+            }
+        }
+
+        /* 7.Jello Button */
+        .jello-btn {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f, #ff9a9e);
+            border: none;
+            border-radius: 40px;
+            padding: 20px 40px;
+            color: #d63384;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(255, 236, 210, 0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+            min-width: 200px;
+        }
+
+        .jello-btn:hover {
+            animation: jello 1.2s ease-in-out;
+            box-shadow: 0 20px 50px rgba(255, 236, 210, 0.6), inset 0 1px 0 rgba(255,255,255,0.6);
+        }
+
+        @keyframes jello {
+            0%, 100% { transform: scale3d(1, 1, 1); }
+            30% { transform: scale3d(1.25, 0.75, 1); }
+            40% { transform: scale3d(0.75, 1.25, 1); }
+            50% { transform: scale3d(1.15, 0.85, 1); }
+            65% { transform: scale3d(0.95, 1.05, 1); }
+            75% { transform: scale3d(1.05, 0.95, 1); }
+        }
+
+        /* 8.New Neon Button */
+        .neon-btn {
+            background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
+            border: none;
+            border-radius: 25px;
+            padding: 20px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(18, 194, 233, 0.4);
+            min-width: 200px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .neon-btn::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59, #12c2e9);
+            border-radius: 27px;
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .neon-btn:hover::before {
+            opacity: 1;
+            animation: neonPulse 1.5s ease-in-out infinite;
+        }
+
+        .neon-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+            box-shadow: 
+                0 0 20px rgba(18, 194, 233, 0.8),
+                0 0 40px rgba(196, 113, 237, 0.6),
+                0 20px 40px rgba(18, 194, 233, 0.4);
+        }
+
+        @keyframes neonPulse {
+            0%, 100% { filter: blur(10px) brightness(1); }
+            50% { filter: blur(15px) brightness(1.5); }
+        }
+
+        /* 9.New Liquid Button */
+        .liquid-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50px;
+            padding: 20px 40px;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            min-width: 200px;
+        }
+
+        .liquid-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .liquid-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            transition: height 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-radius: 0 0 50px 50px;
+        }
+
+        .liquid-btn:hover::before {
+            left: 100%;
+        }
+
+        .liquid-btn:hover::after {
+            height: 100%;
+            border-radius: 50px;
+        }
+
+        .liquid-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.6);
+        }
+
+        .liquid-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+     /*10.star dust button*/
+        .stardust-btn {
+      position: relative;
+      padding: 16px 40px;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(145deg, #53389e, #7b5df1);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(124, 77, 255, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stardust-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 60%);
+      animation: rotate 6s linear infinite;
+      z-index: 0;
+    }
+
+    .stardust-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .stardust-btn:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 20px 30px rgba(124, 77, 255, 0.7);
+    }
+
+    .stardust-btn:active {
+      transform: scale(0.96);
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .button-container { grid-template-columns: 1fr; gap: 30px; }
+            .combo-counter { top: 10px; right: 10px; font-size: 14px; padding: 10px 15px; }
+        }
+    
