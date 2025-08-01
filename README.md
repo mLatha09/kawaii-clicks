@@ -10,7 +10,7 @@ Welcome to the **Magic Buttons Gallery** – a vibrant collection of 9 beautiful
 This web project showcases various magical button styles built using **HTML**, **CSS**, and **JavaScript**. Each button responds with whimsical animations and interactions that make every click a delightful experience.
 
 <p>
-  <a href="preview.mp4" target="_blank" style="display:inline-block; background:#111; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">
+  <a href="media\preview.mp4" target="_blank" style="display:inline-block; background:#111; color:#fff; padding:10px 15px; border-radius:8px; text-decoration:none;">
     ▶️ Watch Magic Buttons Preview
   </a>
 </p>
